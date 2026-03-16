@@ -20,7 +20,23 @@ terraform plan
 terraform apply
 ```
 
-3. Test by publishing a message to the MNS topic:
+3. Destroy resources when done:
+```bash
+terraform destroy
+```
+
+## Cost
+
+Using this module will create resources that incur costs. Estimate costs before deployment:
+- MNS Topic: Based on message volume
+- Function Compute: Based on execution time and memory
+- RAM roles and policies: No direct cost
+
+Refer to [Alibaba Cloud Pricing](https://www.alibabacloud.com/pricing) for details.
+
+## Testing
+
+Test by publishing a message to the MNS topic:
 ```bash
 # Use Alibaba Cloud Console or CLI to publish a test message
 ```

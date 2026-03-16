@@ -32,7 +32,24 @@ terraform plan
 terraform apply
 ```
 
-3. Test by publishing a message with filter tag:
+3. Destroy resources when done:
+```bash
+terraform destroy
+```
+
+## Cost
+
+Using this module will create resources that incur costs. Estimate costs before deployment:
+- MNS Topic: Based on message volume and retention
+- Function Compute: Based on execution time and memory (1GB configuration)
+- SLS Project and Logstore: Based on storage and retention (30-day retention)
+- RAM roles and policies: No direct cost
+
+Refer to [Alibaba Cloud Pricing](https://www.alibabacloud.com/pricing) for details.
+
+## Testing
+
+Test by publishing a message with filter tag:
 ```json
 {
   "text": "Production alert message",
